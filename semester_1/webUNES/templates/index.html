@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block title %}HOME{% endblock %} {% block content
+%}
+  <main>
+    <div class="main-container">
+      <header>
+        <img
+          src="{{ url_for('static', filename='imagens/logo.png') }}"
+          alt="logo unes"
+        />
+        <nav>
+          <ul>
+            <li><a href="/">Home |</a></li>
+            <li><a href="/quem_somos">Quem somos |</a></li>
+            <li><a href="/contato">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="imagem_fundo1">
+        <div class="imagem_fundo1_1">
+          <img class="img_1"
+            src="{{ url_for('static', filename='imagens/capa.png') }}"
+            alt="Capa"
+            style="width: 900px;"
+          />
+        </div>
+      </div>
+
+      <div class="text-container">
+        <h1>Sobre a universidade</h1>
+        <p>
+          Lorem <b>ipsum dolor</b> sit amet consectetur adipisicing elit. Optio
+          vitae consectetur minus aliquid beatae odit nesciunt repellendus ipsa
+          ratione accusantium, ipsam alias aut molestiae provident hic sed
+          natus. Velit, quos. Lorem sit amet, consectetur adipisicing elit.
+          Quia, corporis doloribus assumenda mollitia alias cupiditate provident
+          quisquam tenetur ut fuga cumque laborum neque sapiente vero quae
+          nulla, reprehenderit veniam impedit!
+        </p>
+
+        <p>
+          Lorem <b>ipsum dolor</b> sit, amet consectetur adipisicing elit. Magni
+          voluptatum, dignissimos dolorem minima mollitia ullam, esse ipsa animi
+          porro nihil ipsum possimus ab officia consequuntur, vel itaque ducimus
+          cumque molestiae. Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Eos reprehenderit ducimus illum explicabo a debitis nostrum amet
+          qui dolorem eum et quam, neque incidunt illo expedita, minus animi
+          necessitatibus nulla.
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,100 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  /* posicionamento geral */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 900px;
+}
+
+.text-container {
+  width: 900px;
+}
+
+header {
+  /* cabeçalho geral */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  padding-bottom: 19px;
+  width: 900px;
+}
+
+nav {
+  /* links geral */
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 2px;
+}
+
+.barra_azul {
+  background-color: rgb(112,119, 167);
+  width: 100%;
+  height: 7px;
+}
+
+/* imagem home */
+.imagem_fundo1 {
+  background-color: #dbdbdb;
+  width: 100%;
+}
+
+.imagem_fundo1_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img_1 {
+  width: 900px;
+}
+
+footer {
+  /* rodapé geral */
+  text-align: center;
+  font-size: 70%;
+}
+
+.form-container {
+  /* posicionamento do fomulário */
+  justify-content: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* formulário */
+input[type="email"] {
+  border: 1px gray;
+  border-style: solid;
+}
+
+input[type="assunto"] {
+  border: 1px gray;
+  border-style: solid;
+}
+
+input[type="descrição"] {
+  border: gray;
+  border-style: solid;
+  resize: vertical;
+}
+
+

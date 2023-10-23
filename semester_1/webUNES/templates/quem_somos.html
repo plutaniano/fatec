@@ -1,0 +1,50 @@
+
+  {% extends "base.html" %} {% block title %}QUEM SOMOS{% endblock %} {% block content%}
+    <main>
+      <div class="main-container">
+        <header>
+          <img src="{{ url_for('static', filename= 'imagens/logo.png') }}" alt="logo unes" />
+          <nav>
+            <ul>
+              <li><a href="/">Home |</a></li>
+              <li><a href="/quem_somos">Quem somos |</a></li>
+              <li><a href="/contato">Contato</a></li>
+            </ul>
+          </nav>
+        </header>
+        <div class="text-container">
+          <h1>Quem somos</h1>
+          <p>
+            Lorem <b>ipsum dolor</b> sit amet consectetur adipisicing elit.
+            Optio vitae consectetur minus aliquid beatae odit nesciunt
+            repellendus ipsa ratione accusantium, ipsam alias aut molestiae
+            provident hic sed natus. Velit, quos. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Quia, corporis doloribus assumenda
+            mollitia alias cupiditate provident quisquam tenetur ut fuga cumque
+            laborum neque sapiente vero quae nulla, reprehenderit veniam
+            impedit!
+          </p>
+
+          <h2>5 motivos para estudar</h2>
+          <ol>
+            <li>Material sempre atualizado</li>
+            <li>Tablets em sala de aula</li>
+            <li>Professores renomados</li>
+            <li>Universidade bem avaliada</li>
+            <li>Ótima localização</li>
+          </ol>
+          <hr />
+          <h3>Objetivos</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim labore
+            consectetur repellat fugiat nobis. Nihil, cum, harum, reiciendis
+            magni sed amet sequi dolor sunt corrupti laboriosam optio facilis
+            officia consequatur? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Et, a molestiae? Aliquam, explicabo illum.
+            Laboriosam voluptatem ad nulla cumque maxime, ut, doloremque vero
+            iure tempore necessitatibus excepturi, repudiandae saepe tenetur.
+          </p>
+        </div>
+      </div>
+    </main>
+{% endblock %}

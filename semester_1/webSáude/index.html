@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page 1</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+  <body>
+    <!-- Bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- navbar, z-index para definir posição de algo -->
+    <nav
+      class="position-fixed col-12 navbar-expand-lg navbar-white bg-white"
+      style="z-index: 999"
+    >
+      <div class="container-fluid col-11 m-auto">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="/index.html">Início</a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ms-3">
+              <a class="nav-link active" aria-current="page" href="#">Calculadora</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link" href="#">Contato</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a style="color: #497fb9; font-weight: bold;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" class="nav-link disabled" aria-disabled="true">24h Saudável</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Pesquisar"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Pesquisar
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/img_1.webp" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="img/img_2.webp" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="img/img_3.webp" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Card -->
+    <div class="row row-cols-1 row-cols-md-3 g-4 col-11 m-auto">
+      <div class="col">
+        <!-- Modal 1 -->
+        <div class="card h-100">
+          <img src="img/imc_2.jpeg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Calculadora IMC</h5>
+            <p class="card-text">
+                O Índice de Massa Corporal (IMC) é uma medida que avalia se você está dentro de um peso saudável para sua altura. </p>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+              Saiba mais
+            </button>
+            <a href="pagina_calculadora_imc.html" class="btn btn-primary">Calcular IMC</a>
+
+            <!-- Modal 1 -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Índice de Massa Corporal (IMC)
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <h6>O que é o IMC?</h6>
+                    <p>O Índice de Massa Corporal (IMC) é uma medida que utiliza a altura e o peso de uma pessoa para avaliar se ela está em um peso saudável. É amplamente usado como um indicador geral de obesidade ou magreza em adultos.</p>
+                    <h6>Como calcular o IMC?</h6>
+                    <p>
+                      O IMC é calculado dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado. A fórmula é: IMC = peso / ( altura )<sup>2</sup>.
+                    </p>
+                    <h6>O que o IMC indica?</h6>
+                    <p>
+                    - IMC abaixo de 18,5: Abaixo do peso<br>
+                    - IMC entre 18,5 e 24,9: Peso normal<br>
+                    - IMC entre 25,0 e 29,9: Sobrepeso<br>
+                    - IMC acima de 30,0: Obesidade
+                    </p>
+                    <h6>Importância do IMC</h6>
+                    <p>
+                    Manter um IMC saudável está relacionado a um menor risco de várias condições de saúde, incluindo diabetes tipo 2, doenças cardíacas e certos tipos de câncer.
+                    </p>
+
+                    <h6>Dicas para manter um IMC saudável</h6>
+                    <p>
+                    - Adote uma dieta equilibrada e nutritiva<br>
+                    - Mantenha-se fisicamente ativo regularmente<br>
+                    - Durma o suficiente para uma boa recuperação<br>
+                    - Evite o estresse excessivo e adote técnicas de relaxamento
+                    </p>
+
+                    <h6>Links úteis</h6>
+                    <p>
+                    Para saber mais sobre o IMC e como manter uma vida saudável, confira os seguintes recursos:<br>
+                    - <a href="https://www.saude.gov.br/saude-de-a-z/indice-de-massa-corporal-imc" target="_blank">Ministério da Saúde - IMC</a><br>
+                    - <a href="https://www.abeso.org.br/" target="_blank">ABESO - Associação Brasileira para Estudo da Obesidade e da Síndrome Metabólica</a>
+                    </p>
+                 </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal">
+                      Fechar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal 2 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="img/agua_4.png" class="card-img-top" alt="Importancia da água" />
+          <div class="card-body">
+            <h5 class="card-title">Importância da Água</h5>
+            <p class="card-text">Auxilia na digestão, hidrata a pele, transporta nutrientes, regula o equilíbrio de fluidos e lubrifica articulações .</p>
+            <!-- Botão para abrir o Modal 2 da Água -->
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalAgua"
+            >
+              Saiba mais
+            </button>
+            <a href="pagina_água.html" class="btn btn-primary">Calcular Ingestão diária</a>
+
+            <!-- Modal 2 -->
+            <div
+              class="modal fade"
+              id="modalAgua"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Importância da Água
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <h6>Por que a Água é Importante?</h6>
+                    <p>A água é essencial para a vida. Ela desempenha um papel crucial em nosso corpo, mantendo nossos órgãos funcionando, regulando a temperatura corporal e ajudando na digestão dos alimentos.</p>
+                    <h6>Como se manter hidratado?</h6>
+                    <p>
+                        - Beba pelo menos 2 litros de água por dia<br>
+                        - Consuma alimentos ricos em água, como frutas e vegetais<br>
+                        - Evite bebidas açucaradas e cafeinadas<br>
+                        - Estabeleça lembretes regulares para beber água.
+                    </p>
+                    <h6>Quanto de água devo beber?</h6>
+                    <p>
+                        A quantidade recomendada de água pode variar de pessoa para pessoa, mas um guia geral é beber pelo menos 2 litros de água por dia. Isso pode variar dependendo do peso, atividade física e clima.
+                    </p>
+                    <h6>Como calcular a sua ingestão diária de Água?</h6>
+                    <p>
+                        - Peso (em kg) x 35 ml = Quantidade diária recomendada em mililitros.
+                    </p>
+
+                 </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal">
+                      Fechar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural
+              lead-in to additional content.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- text 1 -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Dicas de Estilo de Vida Saudável</h2>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <h5>1. Alimentação Balanceada:</h5>
+                <p>
+                    Priorize Frutas, vegetais, grãos integrais e proteínas magras. Evite alimentos processados e açúcares refinados.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h5>2. Exercícios Regulares:</h5>
+                <p>
+                    Faça atividades físicas regularmente. Caminhada, corrida, yoga ou qualquer outra atividade que você goste.
+                </p>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <h5>3. Hidratação Adequada:</h5>
+                <p>
+                    Beba pelo menos 2 litros de água por dia. A água é essencial para manter seu corpo hidratado e ajudar na digestão.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h5>4. Descanso e Sono:</h5>
+                <p>
+                    Priorize o sono adequado. Estabeleça uma rotina de sono regular para garantir que seu corpo descanse e se recupere completamente.
+                </p>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-6">
+                <h5>5. Gerenciamento do Estresse:</h5>
+                <p>
+                    Técnicas como meditação, respiração profunda ou hobbies relaxantes, para aliviar o estresse crônico e melhorar seu bem-estar.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h5>6. Evite Substâncias Nocivas:</h5>
+                <p>
+                    Evite o consumo excessivo de álcool e evite o tabagismo. Essas substâncias podem prejudicar sua saúde a longo prazo.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+<div class="col-11 m-auto">
+    <h2 class="text-center">Contato</h2>
+    <form>
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Seu email">
+        </div>
+        <div class="mb-3">
+            <label for="mensagem" class="form-label">Feedback:</label>
+            <textarea class="form-control" id="mensagem" rows="4" placeholder="Se você tem algum feedback ou sugestão, por favor, compartilhe conosco."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer class="text-center mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>© 2023 Seu Site. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    </div>
+  </body>
+</html>
