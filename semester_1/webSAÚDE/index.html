@@ -46,7 +46,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="/index.html">Início</a>
+          <a class="navbar-brand" href="index.html">Início</a>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item ms-3">
               <a class="nav-link active" aria-current="page" href="#">Calculadora</a>
@@ -219,7 +219,7 @@
       <!-- Modal 2 -->
       <div class="col">
         <div class="card h-100">
-          <img src="img/agua_4.png" class="card-img-top" alt="Importancia da água" />
+          <img src="img/agua_4.png" class="card-img-top" alt="Importancia da água" >
           <div class="card-body">
             <h5 class="card-title">Importância da Água</h5>
             <p class="card-text">Auxilia na digestão, hidrata a pele, transporta nutrientes, regula o equilíbrio de fluidos e lubrifica articulações .</p>
@@ -240,8 +240,7 @@
               id="modalAgua"
               tabindex="-1"
               aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -273,7 +272,6 @@
                     <p>
                         - Peso (em kg) x 35 ml = Quantidade diária recomendada em mililitros.
                     </p>
-
                  </div>
                   <div class="modal-footer">
                     <button
@@ -286,19 +284,82 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
+       <!-- modal 3 -->
       <div class="col">
         <div class="card h-100">
-          <img src="..." class="card-img-top" alt="..." />
+          <img src="img/exe_1.png" class="card-img-top" alt="Atividades Físicas" />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Atividades Físicas</h5>
             <p class="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content.
+              A prática regular de atividades físicas traz diversos benefícios para o corpo e a mente. 
             </p>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalAtividades">
+              Saiba mais
+            </button>
+            <a href="pagina_atividades_fisicas.html" class="btn btn-primary">Dicas de Exercícios</a>
+
+             <!-- Modal 3 -->
+            <div
+             class="modal fade"
+             id="modalAtividades"
+             tabindex="-1"
+             aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+             <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Atividades Físicas
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <h6>Benefícios das Atividades Físicas</h6>
+                    <p>A prática regular de atividades físicas melhora a saúde cardiovascular, fortalece os músculos, ajuda no controle do peso e promove o bem-estar mental.</p>
+                    <h6>Como Começar?</h6>
+                    <p>
+                        - Escolha atividades que você goste, como caminhadas, musculação, natação ou dança.<br>
+                        - Estabeleça metas realistas e crie um plano de exercícios.<br>
+                        - Comece devagar e aumente a intensidade gradualmente.<br>
+                        - Faça exercícios com regularidade, pelo menos 3-4 vezes por semana.
+                    </p>
+                    <h6>Dicas para se Manter Ativo</h6>
+                    <p>
+                        - Envolva-se em atividades sociais, como aulas em grupo ou esportes em equipe.<br>
+                        - Varie seus exercícios para evitar o tédio.<br>
+                        - Use aplicativos de fitness para acompanhar seu progresso.<br>
+                        - Não se esqueça do aquecimento e do alongamento antes e após os exercícios.
+                    </p>
+                    <h6>Links Úteis</h6>
+                    <p>
+                        Para obter mais informações sobre atividades físicas e exercícios, confira os seguintes recursos:<br>
+                        - <a href="https://www.minhavida.com.br/fitness" target="_blank">Minha Vida - Fitness e Exercícios</a><br>
+                        - <a href="https://www.who.int/dietphysicalactivity/physical-activity-recommendations-18-64years.pdf" target="_blank">Recomendações da OMS para Atividades Físicas</a>
+                    </p>
+               </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+                    Fechar
+                  </button>
+                </div>
+              </div>
+             </div>
+            </div>
           </div>
         </div>
       </div>
