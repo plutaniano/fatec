@@ -4,6 +4,27 @@
 }
 
 footer{
-    background-color: black;
     padding: 5px;
 }
+
+/* texto do carrosel */
+.custom-caption {
+    color: rgb(74, 74, 74);
+    text-align: left;
+    padding: 20px;
+    top: 45%;
+    width: 70%;
+    margin-left: -4%;
+
+  }
+  
+  .custom-caption h5 {
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    font-weight: bold; 
+
+    
+  }
+  
+
+  
