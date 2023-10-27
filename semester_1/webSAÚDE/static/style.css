@@ -22,9 +22,11 @@ footer{
     font-size: 35px;
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
     font-weight: bold; 
-
-    
   }
   
+  .saída {
+    display: flex;
+    justify-content: space-between;
+  }
 
   

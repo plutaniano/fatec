@@ -26,19 +26,19 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="img/page_1.png" class="d-block w-100" alt="Atividade Física"/>
+          <img src="{{url_for('static', filename='img/page_1.png')}}"  class="d-block w-100" alt="Atividade Física"/>
           <div class="carousel-caption custom-caption">
           <h5>Saúde, Bem-Estar, Transformação</h5>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="img/page_2.png" class="d-block w-100" alt="IMC"/>
+          <img src="{{url_for('static', filename='img/page_2.png')}}"  class="d-block w-100" alt="IMC"/>
           <div class="carousel-caption custom-caption">
             <h5>Descubra agora mesmo o seu IMC!</h5>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="img/page_3.png" class="d-block w-100" alt="Hidratação" />
+          <img src="{{url_for('static', filename='img/page_3.png')}}"  class="d-block w-100" alt="Hidratação" />
           <div class="carousel-caption custom-caption">
             <h5>Você já bebeu Água hoje?</h5>
         </div>
@@ -68,7 +68,7 @@
       <div class="col">
         <!-- Modal 1 -->
         <div class="card h-100">
-          <img src="img/img_1.png" class="card-img-top" alt="IMC" />
+          <img src="{{url_for('static', filename='img/img_1.png')}}" class="card-img-top" alt="IMC" />
           <div class="card-body">
             <h5 class="card-title"> Atividades Físicas</h5>
             <p class="card-text">
@@ -144,9 +144,9 @@
         </div>
       </div>
       <!-- Modal 2 -->
-      <div class="col">
+      <div class="col"> 
         <div class="card h-100">
-          <img src="img/img_2.png" class="card-img-top" alt="Importancia da água" >
+          <img src="{{url_for('static', filename='img/img_2.png')}}" class="card-img-top" alt="Calculadora IMC" >
           <div class="card-body">
             <h5 class="card-title">Calculadora IMC</h5>
             <p class="card-text">O Índice de Massa Corporal (IMC) é uma medida que avalia se você está dentro de um peso saudável para sua altura.</p>
@@ -159,7 +159,7 @@
             >
               Saiba mais
             </button>
-            <a href="imc.html" class="btn btn-primary">Calcular IMC</a>
+            <a href="/imc" class="btn btn-primary">Calcular IMC</a>
 
             <!-- Modal 2 -->
             <div
@@ -224,7 +224,7 @@
        <!-- modal 3 -->
       <div class="col">
         <div class="card h-100">
-          <img src="img/img_3.png" class="card-img-top" alt="Atividades Físicas" />
+          <img src="{{url_for('static', filename='img/img_3.png')}}" class="card-img-top" alt="Atividades Físicas" />
           <div class="card-body">
             <h5 class="card-title">Importância da Água</h5>
             <p class="card-text">
@@ -367,4 +367,4 @@
     </form>
 </div>
 
-{ % endblock %}
+{% endblock %}
