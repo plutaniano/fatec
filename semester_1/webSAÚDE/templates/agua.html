@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card mx-auto" style="width: 40rem">
+  <img
+    src="{{url_for('static', filename='img/img_3.png')}}"
+    class="card-img-top"
+    alt="Fundo água"
+  />
+
+  <div class="card p-4">
+    <h2 class="text-center mb-4">Calculadora de Ingestão Água</h2>
+    <form action="/calcular_agua" method="post">
+        <div class="mb-3">
+            <label for="peso" class="form-label">Peso (kg):</label>
+            <input type="text" class="form-control" id="peso" name="peso" required>
+        </div>
+        <div class="mb-3">
+            <label for="sexo" class="form-label">Sexo:</label>
+            <select class="form-select" id="sexo" name="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="resultado" class="form-label">Resultado:</label>
+            <input type="text" class="form-control" id="resultado" name="resultado" readonly value="{{ resultado }}">
+            
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular</button>
+    </form>
+</div>
+  
+  
+
+{% endblock %}

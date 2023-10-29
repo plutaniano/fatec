@@ -1,0 +1,26 @@
+{% extends 'base.html' %}{% block content %}
+<div class="card mx-auto" style="width: 40rem">
+    <img
+      src="{{url_for('static', filename='img/img_1.png')}}"
+      class="card-img-top"
+      alt="Fundo AtividadeFísica"
+    />
+  
+    <div class="card p-4">
+      <h2 class="text-center mb-4">Dicas de Exercícios</h2>
+      <p>
+        Aqui estão algumas dicas úteis para ajudá-lo a manter um estilo de vida ativo e saudável:
+      </p>
+      <ul>
+        <li>Faça pelo menos 30 minutos de exercícios cardiovasculares, como caminhada rápida ou corrida, pelo menos 3-4 vezes por semana.</li>
+        <li>Incorpore exercícios de treino de força, como levantamento de peso ou flexões, para fortalecer seus músculos.</li>
+        <li>Não se esqueça dos exercícios de flexibilidade, como yoga ou alongamentos, para melhorar a sua amplitude de movimento.</li>
+        <li>Mantenha-se hidratado durante o exercício. Beba água antes, durante e após a atividade física.</li>
+        <li>Escute seu corpo. Se sentir dor excessiva, pare e descanse. Consulte um médico se a dor persistir.</li>
+      </ul>
+      <p>
+        Lembre-se, a consistência é chave. Mantenha-se comprometido com seus objetivos de fitness e você verá resultados ao longo do tempo. Se precisar de orientação adicional, consulte um treinador pessoal ou um profissional de saúde.
+      </p>
+  </div>
+</div>
+{% endblock %}
