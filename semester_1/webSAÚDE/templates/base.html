@@ -36,7 +36,7 @@
 
     <!-- navbar, z-index para definir posição de algo -->
     <nav
-      class="position-fixed col-12 navbar-expand-lg navbar-white bg-white"
+      class="position-fixed col-12 navbar-expand-lg custom-navbar"
       style="z-index: 999"
     >
       <div class="container-fluid col-11 m-auto">
@@ -52,35 +52,39 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
-          style="font-size: 22px"
           class="collapse navbar-collapse"
           id="navbarTogglerDemo01"
         >
+        <div class="nav-logo">
           <a
-            style="
-              color: #497fb9;
-              font-weight: bold;
-              font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
-                'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            "
             class="nav-link disabled"
             href="#"
             aria-disabled="true"
             >24h Saudável</a
           >
+        </div>
+        <div class="nav-options">
           <ul class="navbar-nav m-flex mb-2 mb-lg-0">
             <li class="nav-item ms-3">
               <a class="nav-link active" aria-current="page" href="/"
-                >Início</a
+                >Home</a
               >
             </li>
-            <!-- <li class="nav-item ms-3">
-              <a class="nav-link" href="#">Calculadora</a>
-            </li> -->
+            <li class="nav-item dropdown ms-3">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Calculadora
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="imc">Calculadora IMC</a></li>
+                <li><a class="dropdown-item" href="agua">Calculadora Água</a></li>
+               
+              </ul>
+            </li>
             <li class="nav-item ms-3">
               <a class="nav-link" href="#contato">Contato</a>
             </li>
           </ul>
+        </div>
         </div>
       </div>
     </nav>
@@ -90,7 +94,7 @@
 
 
     <!-- Footer -->
-    <footer class="text-center mt-5">
+    <footer class="text-center mt-5 pt-3">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -99,5 +103,6 @@
         </div>
       </div>
     </footer>
+    
   </body>
 </html>

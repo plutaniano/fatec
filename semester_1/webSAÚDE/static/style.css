@@ -1,25 +1,52 @@
+/* navbar ----------------*/
+
+.custom-navbar{
+    background-color: #f7f6f6
+
+}
+
+.nav-logo{
+  color:rgb(104, 105, 151);
+  font-weight: bold;
+  font-size: 2.7vh;
+
+}
+
+.nav-options{
+    font-size: 2.4vh;
+   
+}
+
+/* ---------------------- */
+
+
 .icones{
     font-size: 150px;
     width: 150px;
 }
 
 footer{
-    padding: 5px;
+    background-color: #f7f6f6;
 }
 
-/* texto do carrosel */
+footer p{
+  padding: 1vh;
+  
+
+}
+
+/* texto do carrosel  ------------*/
 .custom-caption {
-    color: rgb(74, 74, 74);
+    display: flex;
+    color: black;
     text-align: left;
-    padding: 20px;
     top: 45%;
     width: 70%;
-    margin-left: -4%;
-
+    left: 22%;
   }
   
   .custom-caption h5 {
-    font-size: 35px;
+    font-size: 4vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
     font-weight: bold; 
   }
@@ -30,3 +57,8 @@ footer{
   }
 
   
+  @media (max-width: 1000px) { 
+    .custom-caption{
+      display: none;
+    }
+   }
