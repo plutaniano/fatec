@@ -5,6 +5,20 @@ app = Flask(__name__)
 def index():
      return render_template('index.html')
 
+#feedback
+@app.route('/receber_feedback', methods=['POST'])
+def receber_feedback():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+        feedback = request.form['feedback']
+        print(f"Nome: {nome}, Email: {email}, Feedback: {feedback}")            
+        return 'Feedback recebido com sucesso!'
+
+        if nome and email and feedback:
+            
+
+
 @app.route('/imc')
 def imc():
      return render_template('imc.html')
@@ -16,6 +30,7 @@ def atividade():
 @app.route('/agua')
 def agua():
      return render_template('agua.html')
+
 
 # IMC
 @app.route('/calcular', methods=['POST'])

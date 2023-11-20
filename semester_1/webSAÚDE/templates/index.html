@@ -64,6 +64,7 @@
     </div>
 
     <!-- Card -->
+    
     <div class="row row-cols-1 row-cols-md-3 g-4 col-11 m-auto">  
       <div class="col">
         <!-- Modal 1 -->
@@ -348,20 +349,21 @@
     </div>
 
     <!-- Contact -->
+ 
 <div class="col-11 m-auto" id="contato">
     <h2 class="text-center">Contato</h2>
-    <form>
+    <form action="/receber_feedback" method="POST">  
         <div class="mb-3">
             <label for="nome" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Seu email">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Seu email">
         </div>
         <div class="mb-3">
             <label for="mensagem" class="form-label">Feedback:</label>
-            <textarea class="form-control" id="mensagem" rows="4" placeholder="Se você tem algum feedback ou sugestão, por favor, compartilhe conosco."></textarea>
+            <textarea class="form-control" id="mensagem" name="feedback" rows="4" placeholder="Se você tem algum feedback ou sugestão, por favor, compartilhe conosco."></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
