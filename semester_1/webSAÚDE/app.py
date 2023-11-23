@@ -5,8 +5,11 @@ import os
 
 app = Flask(__name__)
 
+#env
 load_dotenv()
 
+
+#rota banco de dados
 @app.route('/receber_feedback', methods=['POST'])
 def receber_feedback():
    # variáveis de ambiente
@@ -39,7 +42,7 @@ def receber_feedback():
 
 
 
-
+#rota das pages
 @app.route('/')
 def index():
     return render_template('index.html')
