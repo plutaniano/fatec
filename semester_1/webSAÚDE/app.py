@@ -1,38 +1,44 @@
 from flask import Flask, request, render_template
-from flask_mysqldb import MySQL
+import mysql.connector
 from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
 
-
 load_dotenv()
 
-
-app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST')
-app.config['MYSQL_USER'] = os.getenv('MYSQL_USER')
-app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD')
-app.config['MYSQL_DB'] = os.getenv('MYSQL_DB')
-
-mysql = MySQL(app)
-
-
-
-#feedback
 @app.route('/receber_feedback', methods=['POST'])
 def receber_feedback():
+   # variáveis de ambiente
+    MYSQL_USER = os.getenv('MYSQL_USER')
+    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
+    MYSQL_HOST = os.getenv('MYSQL_HOST')
+    MYSQL_DB = os.getenv('MYSQL_DB')
+
     if request.method == 'POST':
         nome = request.form['nome']
         email = request.form['email']
-        feedback = request.form['feedback']     
-
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO web_saude.table_feedback (nome, email, feedback) VALUES (%s, %s, %s)", (nome, email, feedback))
-        mysql.connection.commit()
-        cur.close()
+        feedback = request.form['feedback']
+        
+        # Abrir a conexão
+        cnx = mysql.connector.connect(user=MYSQL_USER, password=MYSQL_PASSWORD,
+                                      host=MYSQL_HOST, database=MYSQL_DB)
+        # Executar operações no banco de dados
+        cur = cnx.cursor()
+        sql = "INSERT INTO table_feedback (nome, email, feedback) VALUES (%s, %s, %s)"
+        values = (nome, email, feedback)
+        cur.execute(sql, values)
+        cnx.commit()
+        # Fechar a conexão quando terminar
+        cnx.close()
         return 'Feedback recebido com sucesso!'
 
-        
+
+
+
+
+
+
 
 @app.route('/')
 def index():
