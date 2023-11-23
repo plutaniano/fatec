@@ -9,8 +9,6 @@ app = Flask(__name__)
 load_dotenv()
 
 
-
-
 app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST')
 app.config['MYSQL_USER'] = os.getenv('MYSQL_USER')
 app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD')
@@ -29,7 +27,7 @@ def receber_feedback():
         feedback = request.form['feedback']     
 
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO feedback (nome, email, feedback) VALUES (%s, %s, %s)", (nome, email, feedback))
+        cur.execute("INSERT INTO web_saude.table_feedback (nome, email, feedback) VALUES (%s, %s, %s)", (nome, email, feedback))
         mysql.connection.commit()
         cur.close()
         return 'Feedback recebido com sucesso!'
