@@ -1,9 +1,21 @@
 from flask import Flask, request, render_template
+from flask_mysqldb import MySQL
+from dotenv import load_dotenv
+import os
+
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-     return render_template('index.html')
+
+load_dotenv()
+
+app.config['MYSQL_HOST'] = os.getenv('localhost')
+app.config['MYSQL_USER'] = os.getenv('root')
+app.config['MYSQL_PASSWORD'] = os.getenv('vanda123')
+app.config['MYSQL_DB'] = os.getenv('web_saude')
+
+mysql = MySQL(app)
+
+
 
 #feedback
 @app.route('/receber_feedback', methods=['POST'])
@@ -11,17 +23,24 @@ def receber_feedback():
     if request.method == 'POST':
         nome = request.form['nome']
         email = request.form['email']
-        feedback = request.form['feedback']
-        print(f"Nome: {nome}, Email: {email}, Feedback: {feedback}")            
+        feedback = request.form['feedback']     
+
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO feedback (nome, email, feedback) VALUES (%s, %s, %s)", (nome, email, feedback))
+        mysql.connection.commit()
+        cur.close()
         return 'Feedback recebido com sucesso!'
 
-        if nome and email and feedback:
+        
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
             
-
-
 @app.route('/imc')
 def imc():
-     return render_template('imc.html')
+    return render_template('imc.html')
 
 @app.route('/atividade')
 def atividade():
