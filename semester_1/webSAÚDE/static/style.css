@@ -1,66 +1,91 @@
-/* navbar ----------------*/
+/* NAVBAR */
+.custom-navbar {
+  background-color: #C1FF72;
+}
 
-.custom-navbar{
-    background-color: #f7f6f6
+.nav-txt{
+display: flex;
+  font-size: 2.1vh;
+  justify-content: center;
+  color: black;
+ 
+  
+}
+
+/* texto 1 + img */
+.position-relative p{
+  max-width: 60%;
+  font-size: 4vh;
 
 }
 
-.nav-logo{
-  color:rgb(104, 105, 151);
-  font-weight: bold;
-  font-size: 2.7vh;
-
+.txt-align{
+  margin-top: -5%;
 }
 
-.nav-options{
-    font-size: 2.4vh;
-   
+
+
+/* CARD */
+
+
+.card_box {
+  display: flex;
+  font-size: 90%;
+  justify-content: space-between;
 }
 
-/* ---------------------- */
 
 
 
+
+/* GERAL */
+.back-all {
+  /* background-color: #edeff7; */
+  font-size: 2.2vh;
+  font-weight: 300;
+}
+
+.back-all h2{
+  font-size: 5vh;
+ 
+}
+
+
+
+/* rodapé */
 
 footer{
-    background-color: #f7f6f6;
+  background-color: #C1FF72;
 }
 
-footer p{
+footer p {
   padding: 1vh;
-  
-
 }
 
-/* texto do carrosel  ------------*/
+/* texto img 1  ------------*/
 .custom-caption {
-    display: flex;
-    color: black;
-    text-align: left;
-    top: 45%;
-    width: 70%;
-    left: 22%;
-  }
-  
-  .custom-caption h5 {
-    font-size: 4vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif ;
-    font-weight: bold; 
-  }
-  
-  .saída {
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  color: black;
+  text-align: left;
+  top: 45%;
+  width: 70%;
+  left: 22%;
+}
 
-  
-  @media (max-width: 1000px) { 
-    .custom-caption{
-      display: none;
-    }
-   }
+.custom-caption h5 {
+  font-size: 4vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
 
-/* textos */
-   p{
-    font-weight: 300;
-   }
+.saída {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* media */
+@media (max-width: 1000px) {
+  .txt-align {
+    display: none;
+  }
+}

@@ -9,10 +9,11 @@ app = Flask(__name__)
 load_dotenv()
 
 
-#rota banco de dados
+#BANCO DE DADOS
+#POST
 @app.route('/receber_feedback', methods=['POST'])
 def receber_feedback():
-   # variáveis de ambiente
+    # variáveis de ambiente
     MYSQL_USER = os.getenv('MYSQL_USER')
     MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
     MYSQL_HOST = os.getenv('MYSQL_HOST')
@@ -22,30 +23,48 @@ def receber_feedback():
         nome = request.form['nome']
         email = request.form['email']
         feedback = request.form['feedback']
-        
+        avaliacao = request.form['avaliacao']
         # Abrir a conexão
         cnx = mysql.connector.connect(user=MYSQL_USER, password=MYSQL_PASSWORD,
                                       host=MYSQL_HOST, database=MYSQL_DB)
         # Executar operações no banco de dados
-        cur = cnx.cursor()
-        sql = "INSERT INTO table_feedback (nome, email, feedback) VALUES (%s, %s, %s)"
-        values = (nome, email, feedback)
+        cur = cnx.cursor(prepared=True)
+        sql = "INSERT INTO table_feedback (nome, email, feedback, avaliacao) VALUES (%s, %s, %s, %s)"
+        values = (nome, email, feedback, avaliacao)
         cur.execute(sql, values)
         cnx.commit()
         # Fechar a conexão quando terminar
         cnx.close()
         return 'Feedback recebido com sucesso!'
 
-
-
-
-
-
-
-#rota das pages
-@app.route('/')
+# GET
+@app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    MYSQL_USER = os.getenv('MYSQL_USER')
+    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
+    MYSQL_HOST = os.getenv('MYSQL_HOST')
+    MYSQL_DB = os.getenv('MYSQL_DB')
+
+    # Abrir conexão
+    cnx = mysql.connector.connect(user=MYSQL_USER, password=MYSQL_PASSWORD,
+                                  host=MYSQL_HOST, database=MYSQL_DB)
+    cur = cnx.cursor(dictionary=True)
+    
+    query = "SELECT nome, feedback, avaliacao FROM table_feedback LIMIT 10"
+
+    # Consulta para buscar os feedbacks
+    cur.execute(query)
+    feedbacks = cur.fetchall()
+    print(feedbacks)
+    cur.close()
+    cnx.close()
+
+    # Renderiza o template com os feedbacks
+    return render_template('index.html', feedbacks=feedbacks)
+
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
 
             
 @app.route('/imc')
@@ -93,6 +112,11 @@ def calcular_agua():
     agua = peso * 35  
 
     return render_template('agua.html', resultado=agua)
+
+
+
+
+
 
 
 if __name__ == '__main__':
