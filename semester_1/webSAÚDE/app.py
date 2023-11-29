@@ -1,86 +1,74 @@
-from flask import Flask, request, render_template
-import mysql.connector
+from flask import Flask, request, render_template, redirect
+from mysql.connector import connect
 from dotenv import load_dotenv
 import os
 
-app = Flask(__name__)
-
-#env
 load_dotenv()
 
 
-#BANCO DE DADOS
-#POST
+app = Flask(__name__)
+mysql = connect(
+    user=os.environ['MYSQL_USER'],
+    password=os.environ['MYSQL_PASSWORD'],
+    host=os.environ['MYSQL_HOST'],
+    database=os.environ['MYSQL_DB'],
+)
+
+with mysql.cursor() as cursor:
+    cursor.execute(
+        """
+            CREATE TABLE IF NOT EXISTS table_feedback (
+                nome      VARCHAR(255),
+                email     VARCHAR(255),
+                feedback  VARCHAR(255),
+                avaliacao INTEGER
+            )
+        """
+    )
+
+
 @app.route('/receber_feedback', methods=['POST'])
 def receber_feedback():
-    # variáveis de ambiente
-    MYSQL_USER = os.getenv('MYSQL_USER')
-    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
-    MYSQL_HOST = os.getenv('MYSQL_HOST')
-    MYSQL_DB = os.getenv('MYSQL_DB')
+    with mysql.cursor() as cursor:
+        cursor.execute(
+            """
+                INSERT INTO table_feedback (nome, email, feedback, avaliacao)
+                     VALUES (%(nome)s, %(email)s, %(feedback)s, %(avaliacao)s)
+            """,
+            request.form,
+        )
+    return redirect("/")
 
-    if request.method == 'POST':
-        nome = request.form['nome']
-        email = request.form['email']
-        feedback = request.form['feedback']
-        avaliacao = request.form['avaliacao']
-        # Abrir a conexão
-        cnx = mysql.connector.connect(user=MYSQL_USER, password=MYSQL_PASSWORD,
-                                      host=MYSQL_HOST, database=MYSQL_DB)
-        # Executar operações no banco de dados
-        cur = cnx.cursor(prepared=True)
-        sql = "INSERT INTO table_feedback (nome, email, feedback, avaliacao) VALUES (%s, %s, %s, %s)"
-        values = (nome, email, feedback, avaliacao)
-        cur.execute(sql, values)
-        cnx.commit()
-        # Fechar a conexão quando terminar
-        cnx.close()
-        return 'Feedback recebido com sucesso!'
 
-# GET
 @app.route('/', methods=['GET'])
 def index():
-    MYSQL_USER = os.getenv('MYSQL_USER')
-    MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
-    MYSQL_HOST = os.getenv('MYSQL_HOST')
-    MYSQL_DB = os.getenv('MYSQL_DB')
-
-    # Abrir conexão
-    cnx = mysql.connector.connect(user=MYSQL_USER, password=MYSQL_PASSWORD,
-                                  host=MYSQL_HOST, database=MYSQL_DB)
-    cur = cnx.cursor(dictionary=True)
-    
-    query = "SELECT nome, feedback, avaliacao FROM table_feedback LIMIT 10"
-
-    # Consulta para buscar os feedbacks
-    cur.execute(query)
-    feedbacks = cur.fetchall()
-    print(feedbacks)
-    cur.close()
-    cnx.close()
-
-    # Renderiza o template com os feedbacks
+    with mysql.cursor(dictionary=True) as cursor:
+        cursor.execute(
+            """
+                SELECT nome, feedback, avaliacao
+                  FROM table_feedback
+                 LIMIT 10
+            """
+        )
+        feedbacks = cursor.fetchall()
     return render_template('index.html', feedbacks=feedbacks)
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
 
-            
 @app.route('/imc')
 def imc():
     return render_template('imc.html')
 
+
 @app.route('/atividade')
 def atividade():
      return render_template('atividade.html')
+
 
 @app.route('/agua')
 def agua():
      return render_template('agua.html')
 
 
-# IMC
 @app.route('/calcular', methods=['POST'])
 def calcular():
     peso = float(request.form['peso'])
@@ -105,22 +93,12 @@ def calcular():
     return render_template('imc.html', resultado=resultado)
 
 
-# ÁGUA
 @app.route('/calcular_agua', methods=['POST'])
 def calcular_agua():
     peso = float(request.form['peso'])
-    agua = peso * 35  
-
+    agua = peso * 35
     return render_template('agua.html', resultado=agua)
-
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
- 
-
-
-
